@@ -1605,7 +1605,7 @@ returned number of days assumes 24 hours in one day, which does not
 hold true on leap seconds days.)"
   (declare (type (real 0) duration)
 	   (type (or (integer 0) null) subsecond-digits)
-	   (type (member floor ceiling round truncate) rounding))
+	   #+acl (type (member floor ceiling round truncate) rounding))
   ;; Handle subseconds up front.  Otherwise, CEILING could push the
   ;; number of seconds-of-minute up to 60, which needs to carry over
   ;; to minutes-of-hour and soforth.
@@ -1635,7 +1635,7 @@ is a symbol that controls how subsecond precision is handled: it may
 be either FLOOR, CEILING, ROUND, or TRUNCATE."
   (declare (type real seconds)
 	   (type (integer 0) subsecond-digits)
-	   (type (member floor ceiling round truncate) rounding))
+	   #+acl (type (member floor ceiling round truncate) rounding))
   (let* ((orig-seconds seconds)
 	 (subsecond-precision (expt 1/10 subsecond-digits))
 	 ;; Since we give DECODE-TIME-DURATION the absolute value, the
@@ -1776,7 +1776,7 @@ documentation strings may appear there only once."
 resulting list is stored in PLACE and then returned."
   `(push-append% ,place ,list))
 (define-modify-macro push-append% (list) swapped-append)
-(proclaim '(inline swapped-append))
+#+acl (proclaim '(inline swapped-append))
 (defun swapped-append (l2 l1)
   (declare (type list l1))
   (append l1 l2))
@@ -1786,7 +1786,7 @@ resulting list is stored in PLACE and then returned."
 PLACE.  The resulting list is stored in PLACE and then returned."
   `(push-nconc% ,place ,list))
 (define-modify-macro push-nconc% (list) swapped-nconc)
-(proclaim '(inline swapped-nconc))
+#+acl (proclaim '(inline swapped-nconc))
 (defun swapped-nconc (l2 l1)
   (declare (type list l1))
   (nconc l1 l2))
