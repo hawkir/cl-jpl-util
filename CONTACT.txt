@@ -1,4 +1,8 @@
-I'm reachable via e-mail for feedback, questions, help, and bug
-reports: jpl-software at thoughtcrime.us
+Rick Venn is the current maintainer for libraries supporting J.P
+Laroque's Calispel. Reachable via e-mail for feedback, questions,
+help, and bug reports: sasquatch at rickvenn dot com or submit pull
+requests to https://github.com/rick-monster/cl-jpl-util
 
-  -- J.P. Larocque
+The original library author can be contacted here:
+
+jpl-software at thoughtcrime.us
